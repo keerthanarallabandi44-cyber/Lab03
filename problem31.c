@@ -1,23 +1,23 @@
 #include <stdio.h>
 
-int compare(char s1[], char s2[]){
-    int i,count=0;
-    for(i=0; s1[i]!='\n' && s2[i] !='\n';i++){
-        if(s1[i]==s2[i])
-        count++;}
+int main() {
+    char a[200], b[200];
+    int i = 0;
 
-        return count;
-}
-
-int main(){
-    char s1[200],s2[200];
     printf("enter first string: ");
-    fgets(s1,sizeof(s1),stdin);
-
+    fgets(a, 200, stdin);
     printf("enter second string: ");
-    fgets(s2,sizeof(s2),stdin);
+    fgets(b, 200, stdin);
 
-    printf("After comparing %d characters are same",compare(s1,s2));
+    while (a[i]!='\0'&& b[i]!='\0' && a[i] == b[i]) {
+        i++;
+    }
+
+    if (a[i] == b[i]) {
+        printf("strings are equal\n");
+    } else {
+        printf("strings are not equal\n");
+    }
 
     return 0;
 }
